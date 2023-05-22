@@ -1,0 +1,41 @@
+﻿@model EditWorkerVM
+<form class="form-horizontal form-material" enctype="multipart/form-data" method="post">
+    <div class="form-group mb-4">
+        <label class="col-md-12 p-0" asp-for="Name"></label>
+        <div class="col-md-12 border-bottom p-0">
+            <input asp-for="Name" placeholder="Name" class="form-control p-0 border-0" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+    </div>
+    <div>
+        <img style="width:150px" src="~/assets/img/@Model.ImageName" class="img-responsive img-circle" alt="">
+        <div class="form-group mb-4">
+            <input asp-for="ImageName" value="@Model.ImageName" style="display:none" placeholder="Profile Image" class="form-control p-0 border-0" />
+
+            <div/>
+    </div>
+    <div class="form-group mb-4">
+        <label class="col-md-12 p-0" asp-for="Image">Worker Image</label>
+        <div class="col-md-12 border-bottom p-0">
+            <input asp-for="Image" placeholder="Profile Image" class="form-control p-0 border-0" />
+            <span class="text-danger" asp-validation-for="Image"></span>
+        </div>
+    </div>
+    <div class="form-group mb-4">
+        <label class="col-sm-12">Select Country</label>
+
+        <div class="col-sm-12 border-bottom">
+            <select class="form-select shadow-none p-0 border-0 form-control-line" asp-for="WorkId">
+                @foreach (var item in Model.Works)
+                {
+                    <option value="@item.Id">@item.WorkName</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group mb-4">
+        <div class="col-sm-12">
+            <button class="btn btn-success" type="submit">Create Worker</button>
+        </div>
+    </div>
+</form>

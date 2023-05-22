@@ -1,0 +1,36 @@
+﻿@model LoginVM
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" style="color:#3680C1">Contact Us</h2>
+                <h3 class="section-subheading text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="#" method="post" name="sentMessage" id="contactForm" novalidate>
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input asp-for="EmailAdress" placeholder="EmailAdress">
+                                <span asp-validation-for="EmailAdress"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Password" placeholder="Password">
+                                <span asp-validation-for="Password"></span>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div class="text-center"><button type="submit">login</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

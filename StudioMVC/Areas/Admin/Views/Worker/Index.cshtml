@@ -1,0 +1,44 @@
+﻿@model List<Worker>
+@{
+    int count = 0;
+}
+<div class="card-body">
+    <div class="table-responsive">
+        <a asp-action="Create"><div class="btn btn-success">Create</div></a>
+        <h3>Worker Table</h3>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Worker Image</th>
+                    <th>Worker Name</th>
+                    <th>Worker work type</th>
+                    <th>Setting</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Worker item in Model)
+                {
+                    <tr>
+                        <td>@(++count)</td>
+                        <td>
+                            <img style="width:150px" src="~/assets/img/@item.ImageName" class="img-responsive img-circle" alt="">
+
+                        </td>
+                        <td>@item.Name</td>
+                        <td>@item.Works.WorkName</td>
+                        <td>
+                            <button class="btn btn-info">Detalies</button>
+                            <form asp-action="Edit" asp-route-id="@item.Id" method="get">
+                                <button class="btn btn-primary">Edit</button>
+                            </form>
+                            <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

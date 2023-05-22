@@ -1,0 +1,53 @@
+﻿@model RegisterVM
+@*@{
+    Layout = null;
+}*@
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" style="color:#3680C1">Contact Us</h2>
+                <h3 class="section-subheading text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="#" method="post" name="sentMessage" id="contactForm" novalidate>
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input asp-for="Name" placeholder="Name">
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Surname" placeholder="Surname">
+                                <span asp-validation-for="Surname"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Username" placeholder="Username">
+                                <span asp-validation-for="Username"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="EmailAddress" placeholder="EmailAddress">
+                                <span asp-validation-for="EmailAddress"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Password" placeholder="Password">
+                                <span asp-validation-for="Password"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="ConfirmPassword" placeholder="ConfirmPassword">
+                                <span asp-validation-for="ConfirmPassword"></span>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div class="text-center"><button type="submit">Register</button></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
